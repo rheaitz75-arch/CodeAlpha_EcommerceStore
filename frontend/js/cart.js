@@ -66,7 +66,7 @@ async function placeOrder() {
 
   const cart = getCart();
   const payload = {
-    items: cart.map((i) => ({ productId: i.productId, quantity: i.quantity }))
+    items: cart.map((i) => ({ productId: i.productId || i.id || i.id, quantity: i.quantity }))
   };
 
   try {
